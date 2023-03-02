@@ -35,6 +35,4 @@ pipeline parse_pipeline(Parser p) {
     /* Consumir todo lo que hay inclusive el \n */
     /* Si hubo error, hacemos cleanup */
 
-    return NULL; // MODIFICAR
-}
 
