@@ -7,6 +7,7 @@
 
 static scommand parse_scommand(Parser p) {
     /* Devuelve NULL cuando hay un error de parseo */
+    
     return NULL;
 }
 
