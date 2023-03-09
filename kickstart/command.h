@@ -37,8 +37,8 @@ scommand scommand_new(void);
  * Nuevo `scommand', sin comandos o argumentos y los redirectores vacíos
  *   Returns: nuevo comando simple sin ninguna cadena y redirectores vacíos.
  * Ensures: result != NULL && scommand_is_empty (result) &&
- *  scommand_get_redir_in (result) == NULL &&
- *  scommand_get_redir_out (result) == NULL
+ *	scommand_get_redir_in (result) == NULL &&
+ *	scommand_get_redir_out (result) == NULL
  */
 
 scommand scommand_destroy(scommand self);
@@ -114,7 +114,7 @@ char * scommand_get_redir_out(const scommand self);
  * Obtiene los nombres de archivos a donde redirigir la entrada (salida).
  *   self: comando simple a decidir si está vacío.
  *   Returns: nombre del archivo a donde redirigir la entrada (salida)
- *  o NULL si no está redirigida.
+ *	o NULL si no está redirigida.
  * Requires: self!=NULL
  */
 
@@ -136,7 +136,7 @@ char * scommand_to_string(const scommand self);
  * pipeline: tubería de comandos.
  * Ejemplo: ls -l *.c > out < in  |  wc  |  grep -i glibc  &
  * Secuencia de comandos simples que se ejecutarán en un pipeline,
- *  más un booleano que indica si hay que esperar o continuar.
+ *	más un booleano que indica si hay que esperar o continuar.
  *
  * Una vez que un comando entra en el pipeline, la memoria pasa a ser propiedad
  * del TAD. El llamador no debe intentar liberar la memoria de los comandos que
@@ -157,8 +157,8 @@ pipeline pipeline_new(void);
  * Nuevo `pipeline', sin comandos simples y establecido para que espere.
  *   Returns: nuevo pipeline sin comandos simples y que espera.
  * Ensures: result != NULL
- *  && pipeline_is_empty(result)
- *  && pipeline_get_wait(result)
+ *	&& pipeline_is_empty(result)
+ *	&& pipeline_get_wait(result)
  */
 
 pipeline pipeline_destroy(pipeline self);

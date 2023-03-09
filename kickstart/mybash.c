@@ -5,7 +5,7 @@
 #include "execute.h"
 #include "parser.h"
 #include "builtin.h"
-#include "parsing.h"
+#include "prompt.h"
 
 
 int main(int argc, char *argv[]){

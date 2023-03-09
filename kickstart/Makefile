@@ -31,9 +31,6 @@ test: $(OBJECTS)
 test-command: command.o
 	make -C tests test-command
 
-test-parsing: command.o parsing.o parser.o
-	make -C tests test-parsing
-
 memtest: $(OBJECTS)
 	make -C tests memtest
 

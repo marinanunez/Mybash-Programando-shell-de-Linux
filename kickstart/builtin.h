@@ -2,40 +2,38 @@
 #define _BUILTIN_H_
 
 #include <stdbool.h>
-
 #include "command.h"
 
-bool builtin_is_internal(scommand cmd);
+bool builtin_is_exit(pipeline pipe);
 /*
- * Indica si el comando alojado en `cmd` es un comando interno
+ * Indica si un "exit"
  *
- * REQUIRES: cmd != NULL
+ * REQUIRES: pipe != NULL
  *
  */
 
-
-bool builtin_alone(pipeline p);
+bool builtin_is_cd(pipeline pipe);
 /*
- * Indica si el pipeline tiene solo un elemento y si este se corresponde a un
- * comando interno.
+ * Indica si el comando es un "cd"
  *
- * REQUIRES: p != NULL
- *
- * ENSURES:
- *
- * builtin_alone(p) == pipeline_length(p) == 1 &&
- *                     builtin_is_internal(pipeline_front(p))
- *
+ * REQUIRES: pipe != NULL
  *
  */
 
-void builtin_run(scommand cmd);
+bool builtin_is_internal(pipeline pipe);
+/*
+ * Indica si el comando es interno 
+ *
+ * REQUIRES: pipe != NULL
+ *
+ */
+
+void builtin_exec(pipeline pipe);
 /*
  * Ejecuta un comando interno
  *
- * REQUIRES: {builtin_is_internal(cmd)}
+ * REQUIRES: {builtin_is_internal(pipe)}
  *
  */
 
 #endif
-
